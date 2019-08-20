@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IOT</title>
+</head>
+<body>
+    <h1 style="background-color: antiquewhite;color: black">IOT</h1>
+    <form action="/iot/" method="post">
+        <input type="text" name="SourceIP">
+        <input type="text" name="DistIP">
+        <input type="text" name="count">
+        <input type="submit" name="提交">
+    </form>
+    <h1 style="background-color: antiquewhite;color: black;">IOT</h1>
+    <table border="1">
+        <thead style="text-align: center">
+            <th>Time</th>
+            <th>Mac Src</th>
+            <th>Mac Dst</th>
+            <th>Mac Type</th>
+            <th>IP Src</th>
+            <th>IP Dst</th>
+            <th>IP Protocol</th>
+            <th>Src Port</th>
+            <th>Dst Port</th>
+        </thead>
+        <tbody style="text-align: center">
+            {% for line in data %}
+            <tr>
+                <td>{{ line.timestamp }}</td>
+                <td>{{ line.eth_src }}</td>
+                <td>{{ line.eth_dst }}</td>
+                <td>{{ line.eth_type }}</td>
+                <td>{{ line.ip_src }}</td>
+                <td>{{ line.ip_dst }}</td>
+                <td>{{ line.ip_proto }}</td>
+                <td>{{ line.trans_sport }}</td>
+                <td>{{ line.trans_dport }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script src="/static/js/jquery-3.3.1.js"></script>
+</body>
+</html>

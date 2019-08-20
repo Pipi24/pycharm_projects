@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wuhiu</title>
+</head>
+<body>
+    <h1 style="background-color: antiquewhite;color: black">Wuhiu</h1>
+    <form action="" method="post">
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <input type="submit" name="提交">
+    </form>
+    <h1 style="background-color: antiquewhite;color: black">Wuhiu</h1>
+    <table border="1">
+        <thead>
+            <th>User</th>
+            <th>Pwd</th>
+        </thead>
+        <tbody>
+            {% for line in data %}
+            <tr>
+                <td>{{ line.user }}</td>
+                <td>{{ line.pwd }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script src="/static/js/jquery-3.3.1.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IoT Relationship Graph</title>
+    <link rel="shortcut icon" href="/static/pic/favicon.ico">
+</head>
+<body>
+<h1 style="background-color: antiquewhite;color: black">IoT Relationship Graph</h1>
+<form action="" method="post">
+    <input type="text" id="file" name="file_path">
+    <input type="submit" value="确定" name="提交">
+</form>
+<h1 style="background-color: antiquewhite;color: black">IoT Relationship Graph</h1>
+<table border="1">
+    <thead style="text-align: center">
+    <th>Mac Src</th>
+    <th>Mac Dst</th>
+    <th>Mac Type</th>
+    <th>IP Src</th>
+    <th>IP Dst</th>
+    <th>IP Protocol</th>
+    <th>Port Src</th>
+    <th>Port Dst</th>
+    <th>Comm Way</th>
+    <th>Host Src</th>
+    <th>Host Dst</th>
+    </thead>
+    <tbody style="text-align: center">
+    {% for line in list_rgs %}
+        <tr>
+            <td>{{ line.eth_src }}</td>
+            <td>{{ line.eth_dst }}</td>
+            <td>{{ line.eth_type }}</td>
+            <td>{{ line.ip_src }}</td>
+            <td>{{ line.ip_dst }}</td>
+            <td>{{ line.ip_proto }}</td>
+            <td>{{ line.trans_sport }}</td>
+            <td>{{ line.trans_dport }}</td>
+            <td>{{ line.comm_way }}</td>
+            <td>{{ line.host_src }}</td>
+            <td>{{ line.host_dst }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+</body>
+</html>
